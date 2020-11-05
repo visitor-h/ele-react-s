@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import locales from './locales'
 import pages from './pages';
+import path from 'path'
 
 
 export default function App(props) {
@@ -20,6 +21,24 @@ export default function App(props) {
             return parent;
         });
     }
+
+    // 得到所有组件列表,返回一个大对象 组件名: 组件
+    const getComponent = () => Object.assign(
+      Object.values(pages.components).reduce((a, b) => {
+          return {...a, ...b}
+      }, {}),
+      pages.documents
+    )
+
+    const renderRoutes = () => Object.entries(getComponent()).map(([key, component]) => {
+        let _path = path.join('/', key)
+        return <Route
+          path={_path}
+          key={_path}
+          exact
+          render={props => <component.default {...props} />}
+        />
+    })
 
     return <div className="app">
         <header className="header">
@@ -47,7 +66,7 @@ export default function App(props) {
                                 Object.keys(pages.documents).map(page => {
                                     return (
                                         <li className="nav-item" key={page}>
-                                            <Link to={`#/${page}`}>{getLocale(`page.${page}`)}</Link>
+                                            <Link to={`/${page}`}>{getLocale(`page.${page}`)}</Link>
                                         </li>
                                     )
                                 })
@@ -66,7 +85,7 @@ export default function App(props) {
                                                 Object.keys(pages.components[group]).map(page => {
                                                     return (
                                                         <li key={page} className="nav-item">
-                                                            <Link to={`#/${page}`}>{getLocale(`page.${page}`)}</Link>
+                                                            <Link to={`/${page}`}>{getLocale(`page.${page}`)}</Link>
                                                         </li>
                                                     )
                                                 })
@@ -82,7 +101,7 @@ export default function App(props) {
             <div className="content">
 
                 <Switch>
-                    { this.getComponent(this.state.page) }
+                    { renderRoutes() }
                 </Switch>
 
                 {/*<ScrollToTop showUnder={210}>*/}
