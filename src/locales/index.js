@@ -1,4 +1,4 @@
-export default {
+const locales =  {
     page: {
         'quick-start': '快速上手',
         'i18n': '国际化',
@@ -61,3 +61,5 @@ export default {
         'hide': '隐藏代码'
     }
 }
+
+export default locales

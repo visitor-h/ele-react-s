@@ -1,4 +1,4 @@
-export default {
+const pages = {
   documents: {
     'quick-start': require('./quick-start'),
     // 'i18n': require('./i18n'),
@@ -10,12 +10,12 @@ export default {
       // 'color': require('./color'),
       // 'typography': require('./typography'),
       // 'icon': require('./icon'),
-      // 'button': require('./button')
+      'button': require('./button')
     },
     'Form': {
       // 'radio': require('./radio'),
       // 'checkbox': require('./checkbox'),
-      // 'input': require('./input'),
+      'input': require('./input'),
       // 'input-number': require('./input-number'),
       // 'select': require('./select'),
       // 'cascader': require('./cascader'),
@@ -34,7 +34,7 @@ export default {
       // 'table': require('./table'),
       // 'tag': require('./tag'),
       // 'progress': require('./progress'),
-      // 'tree': require('./tree'),
+      'tree': require('./tree'),
       // 'pagination': require('./pagination'),
       // 'badge': require('./badge')
     },
@@ -42,7 +42,7 @@ export default {
       // 'alert': require('./alert'),
       // 'loading': require('./loading'),
       // 'message': require('./message'),
-      // 'message-box': require('./message-box'),
+      'message-box': require('./message-box'),
       // 'notification': require('./notification')
     },
     'Nav': {
@@ -53,7 +53,7 @@ export default {
       // 'steps': require('./steps')
     },
     'Others': {
-      // 'dialog': require('./dialog'),
+      'dialog': require('./dialog'),
       // 'tooltip': require('./tooltip'),
       // 'popover': require('./popover'),
       // 'card': require('./card'),
@@ -62,3 +62,5 @@ export default {
     }
   }
 }
+
+export default pages
