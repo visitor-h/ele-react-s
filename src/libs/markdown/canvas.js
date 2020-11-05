@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import marked from 'marked'
-import { transform } from 'babel-standalone'
+// import { transform } from 'babel-standalone'
 
 import Editor from '../editor'
 
@@ -45,17 +45,17 @@ export default class Canvas extends React.Component {
         argv
       }
     }).then(({ args, argv }) => {
-      const code = transform(`
-        class Demo extends React.Component {
-          ${value}
-        }
+      // const code = transform(`
+      //   class Demo extends React.Component {
+      //     ${value}
+      //   }
+      //
+      //   ReactDOM.render(<Demo {...context.props} />, document.getElementById('${this.playerId}'))
+      // `, {
+      //   presets: ['es2015', 'react']
+      // }).code
 
-        ReactDOM.render(<Demo {...context.props} />, document.getElementById('${this.playerId}'))
-      `, {
-        presets: ['es2015', 'react']
-      }).code
-
-      args.push(code)
+      // args.push(code)
 
       new Function(...args).apply(null, argv)
 
