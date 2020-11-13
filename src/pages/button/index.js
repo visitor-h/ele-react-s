@@ -1,16 +1,10 @@
-// import Markdown from '../../libs/markdown';
-//
-// import './style.scss';
-//
-// export default class Button extends Markdown {
-//   document() {
-//     return require(`../../docs/button.md`);
-//   }
-// }
-
-
 import React from 'react'
+import Markdown from 'libs/markdown'
 
-export default function Button() {
-  return <div>Button</div>
+export default class Button extends Markdown {
+  document() {
+    return require('docs/button.md').default
+  }
 }
+
+
