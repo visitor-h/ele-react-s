@@ -1,5 +1,6 @@
 import React from 'react'
 import Markdown from 'libs/markdown'
+import './style.scss'
 
 export default class Button extends Markdown {
   document() {
