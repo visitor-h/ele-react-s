@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "^5.7.0",
+    "@baristalabs/craco-raw-loader": "^1.2.0",
+    "@craco/craco": "^5.8.0",
     "@popperjs/core": "^2.5.4",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "antd": "^4.8.2",
     "async-validator": "^3.4.0",
+    "babel-standalone": "^6.26.0",
     "classnames": "^2.2.6",
     "codemirror": "^5.58.2",
+    "element-theme-default": "^1.4.13",
     "marked": "^1.2.2",
     "node-sass": "^4.14.1",
     "prismjs": "^1.22.0",
@@ -21,9 +25,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "PORT=7000 craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

@@ -5,6 +5,8 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import 'element-theme-default'
+
 ReactDOM.render(
   <Router>
     <App />
