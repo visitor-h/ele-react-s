@@ -11,7 +11,7 @@ export default class Button extends Component {
     nativeType: PropTypes.string,    // 原生 type 属性  button,submit,reset
     loading: PropTypes.bool,
     disabled: PropTypes.bool,
-    plain: PropTypes.bool           // 是否朴素按钮
+    plain: PropTypes.bool,           // 是否朴素按钮
   }
 
   static defaultProps = {
